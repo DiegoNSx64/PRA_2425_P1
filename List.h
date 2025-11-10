@@ -3,9 +3,7 @@
 
 template <typename T> 
 class List {
-    public:
-
-        virtual ~List() = default; 
+    public: 
 
         virtual void insert(int pos, T e) = 0;
 
