@@ -22,10 +22,10 @@ class ListArray : public List<T> {
     public:
        
     	ListArray() : arr(new T[MINSIZE]), max(MINSIZE), n(0) {}
-	~ListArray() override {
+	~ListArray() {
 		delete[] arr;
 		}
-	void insert(int pos, const T& e) override {
+	void insert(int pos, T e) override {
 		if (pos < 0 || pos > n)
 			throw std::out_of_range("Posición inválida en insert()");
 
@@ -44,13 +44,13 @@ class ListArray : public List<T> {
 	}
 
 
-	void append(const T& e) override {
+	void append( T e) override {
 		insert(n, e);
 	
 	}
 
 
-	void prepend(const T& e) override {
+	void prepend(T e) override {
 		insert(0, e);
 	
 	}
@@ -86,7 +86,7 @@ class ListArray : public List<T> {
 
 
 
-	int search(const T& e) const override {
+	int search( T e) const override {
 		for (int i = 0; i < n; ++i)
 			if (arr[i] == e)
 				return i;
