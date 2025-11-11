@@ -13,7 +13,7 @@ class ListLinked : public List<T> {
     public:
 
         ListLinked() : first(nullptr), n(0) {}
-	~ListLinked() override {
+	~ListLinked()  {
 		while (first != nullptr) {
 			Node<T>* aux = first->next;
 			delete first;
